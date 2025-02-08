@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text to Image</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="input-group">
+      <input type="text" id="imageUrl" placeholder="Enter text for image">
+      <button id="createBtn">Create Image</button>
+    </div>
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="new">New</button>
+      <button class="filter-btn" data-filter="hot">Hot</button>
+      <button class="filter-btn" data-filter="recent">Recently Viewed</button>
+      <button class="filter-btn" data-filter="yours">Your Creations</button>
+    </div>
+    <div id="imageContainer"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="viewersModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title">Image Details</div>
+        <button id="closeModal" class="close-button">&times;</button>
+      </div>
+      
+      <div class="modal-tabs">
+        <div class="modal-tab active" data-section="viewersList">Viewers</div>
+        <div class="modal-tab" data-section="commentsSection">Comments</div>
+      </div>
+      
+      <div id="viewersList" class="modal-content-section viewers-list active"></div>
+      
+      <div id="commentsSection" class="modal-content-section">
+        <div id="commentsList" class="comments-section"></div>
+        <div class="comment-input">
+          <input type="text" id="commentInput" placeholder="Write a comment...">
+          <button onclick="submitComment()">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
